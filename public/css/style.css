@@ -1,0 +1,339 @@
+body {
+	background:url(../images/bg.gif) left top repeat-x fixed; 
+	margin:0 auto; 
+	padding:15px; 
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#373737;
+	font-size:12px;
+}
+img{
+	border:0;
+}
+.admin {
+	background:url(../images/admin.png) left top no-repeat; 
+	margin:0 auto; 
+	padding:120px 52px 0 195px; 
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	width:100px;
+	height:311px;
+	font-size:12px;
+}
+td.admin{
+	font-size:12px;
+}
+.br-top {
+	background:url(../images/top.png) center top repeat-x; 
+	height:20px;
+}
+
+
+.br-bottom {
+	background:url(../images/bottom.png) center top repeat-x; 
+	height:20px;
+}
+
+
+.br-left {
+	background:url(../images/left.png) right top repeat-y; 
+	width:20px;
+}
+
+
+.br-right {
+	background:url(../images/right.png) left top repeat-y; 
+	width:20px;
+}
+
+.header {
+	background:url(../images/header.png) center top repeat-x; 
+	height:100px;
+	width:100%;
+}
+
+.sidebar {
+	background:url(../images/sidebar.png) right top repeat-y; 
+	padding:0px 0 0 15px;
+	border:1px solid #a3a8a8;
+	border-right:0;
+	-moz-box-shadow: inset 0 0px 8px #8e8e8e;
+	-webkit-box-shadow: inset 0 0px 8px #8e8e8e;
+	-box-shadow: inset 0 0px 8px #8e8e8e;
+	width:20%;
+}
+a:link, a:visited, .sidebar a:link, .sidebar a:visited {
+	text-decoration:none;
+	color:#000000;
+	font-size:12px;
+}
+
+a:hover, .sidebar a:hover{
+	text-decoration:underline;
+	color:#db0055;
+}
+
+.key {
+	background:url(../images/cont-bg.gif) right top no-repeat; float:right;
+}
+
+#content {
+	padding:25px;
+	font-size:12px;
+	color:#373737;
+	float:left;
+	width:95%;
+	min-height:280px;
+}
+
+#content td{
+	font-size:12px;
+}
+
+#content h2{
+	font-size:18px;
+	line-height:20px;
+	color:#db0055;
+	font-weight:normal;
+}
+
+.txt1, .txt2 {
+    background: url(../images/inputboxbg.gif) repeat-x scroll 0 0 transparent;
+    border: 1px solid #DCDCDC;
+    font-size: 12px;
+    height: 30px;
+    padding: 0;
+    width: 250px;
+}
+.txt2{
+	width:192px;
+}
+table.logintable td{
+	font-size:12px;
+}
+a.btn{
+	background:url(../images/btnbg.gif) repeat-x;
+	height:23px;
+	float:left;
+	padding:6px 8px 0 8px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	position:relative;
+	behavior:url(pie.htc);
+	text-decoration:none;
+	display:block;
+	font:bold 12px Arial, Helvetica, sans-serif;
+	color:#FFF;
+	min-width:84px;
+	margin:0 auto;
+}
+.clear{
+	clear:both;
+	font-size:0;
+}
+.restartbtnsdiv{
+	float:left;
+	width:170px;
+}
+/*css for popup starts*/
+#fade { /*--Transparent background layer--*/
+	display: none; /*--hidden by default--*/
+	background: #000;
+	position: fixed; left: 0; top: 0;
+	width: 100%; height: 100%;
+	opacity: .80;
+	z-index: 9999;
+}
+.popup_block{
+	display: none; /*--hidden by default--*/
+	background: #fff;
+	padding:0 0px 20px 0px;
+	border: 5px solid #ccc;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; 
+	left: 50%;
+	z-index: 99999;
+	/*--CSS3 Rounded Corners--*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	behavior:url(scripts/pie.htc);
+	width:500px;
+}
+img.btn_close {
+	float: right;
+	margin: 0;
+}
+/*--Making IE6 Understand Fixed Positioning--*/
+*html #fade {
+	position: absolute;
+}
+*html .popup_block {
+	position: absolute;
+}
+/*popup elements*/
+.popup_block dl{
+	width:500px;
+	padding:0;
+	margin:8px 0 0 0;
+}
+.popup_block dt{
+	width:150px;
+	padding:0;
+	margin:0;
+	text-align:right;
+	float:left;
+}
+.popup_block dd{
+	width:330px;
+	padding:0 0 0 10px;
+	margin:0;
+	float:left;
+	text-align:left;
+}
+.popup_block h1{
+	background-color:#ccc;
+	color:#000;
+	font:normal 18px Arial, Helvetica, sans-serif;
+	padding:5px 0 5px 5px;
+	margin:0 0 30px 0;
+	width:500px;
+}
+.popup-inputbox, .popup-inputbox1, .popup-inputbox2, .popup-textbox{
+    background: url(../images/inputboxbg.gif) repeat-x 0 0;
+    border: 1px solid #DCDCDC;
+    font-size: 12px;
+    height:18px;
+    padding: 0;
+    width: 250px;
+}
+.popup-inputbox1{
+    width: 80px;
+}
+.popup-inputbox2{
+    width: 150px;
+}
+.popup-selectbox{
+	width:250px;
+}
+.popup-textbox{
+	width:250px;
+	height:100px;
+	resize:none;
+	background: url(../images/inputboxbg.gif) repeat-x 0 bottom #fff;
+}
+a.close{
+	position:absolute;
+	z-index:99999;
+	top:-15px;
+	right:-13px;
+}
+.btn{
+	background:url(../images/btn.gif) repeat-x;
+	padding:5px 8px 5px 8px;
+	height:29px;
+	float:left;
+	color:#fff;
+	font:bold 14px Arial, Helvetica, sans-serif;
+	margin:0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	border:0;
+	cursor:pointer;
+}
+.font11{
+	font-size:11px;
+}
+table.popuptable td{
+	text-align:left;
+}
+h3{
+	font-size:16px;
+	line-height:20px;
+	color:#db0055;
+	font-weight:bold;
+	text-align:left;
+	padding:8px 0 0 0;
+	margin:0;
+}
+.itemDetails{
+	margin-bottom:5px;
+}
+.cacccountinner{
+	 height:470px; 
+	 *height:480px; 
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+}
+.finput{
+	 width:80px; 
+	 margin-right:7px; 
+	 float:left;
+}
+.sinput{
+	width:150px; 
+	margin-right:7px; 
+	float:left;
+}
+.tinput{
+	width:44px; 
+	margin-right:7px; 
+	float:left;
+}
+.popup_block dd {
+    float: left;
+    margin: 0;
+    padding: 0 0 0 10px;
+    text-align: left;
+    width: 340px;
+}
+/*css for popup ends*/
+
+.loadmask {
+    background-color: #EDEDED;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.loadmask-msg {
+    background: none repeat scroll 0 0 #FFFFFF;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1002;
+}
+
+.loadmask-msg div.load-waiting-message {
+    font-size: 13px;
+    margin: 5px 0 15px;
+    text-align: center;
+}
+.loading-msg{
+	float:left;
+	margin-top:8px;
+	font-size: 15px;
+	font-family: caption;
+	margin-left: 10px;
+}
+.load-waiting {
+    background: url("../images/ajax-loader.gif") no-repeat scroll 0 0 transparent;
+    height: 32px;
+    margin: 0 auto;
+    width: 32px;
+    float:left;
+}
+
+skin-main.css (line 2649)
+.load-waiting {
+    display: block;
+}

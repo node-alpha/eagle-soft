@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eagle Soft Switch</title>
+<link href="http://localhost/Zend1.11/public/css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://localhost/Zend1.11/public/js/style2.css" />
+	<script type="text/javascript" src="http://localhost/Zend1.11/public/js/jquery.min.js"></script>
+	<script src="http://localhost/Zend1.11/public/js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="http://localhost/Zend1.11/public/js/jquery.treeview.js" type="text/javascript"></script>
+	<script src="http://localhost/Zend1.11/public/js/common.js" type="text/javascript"></script>
+	<script src="http://localhost/Zend1.11/public/js/core-ajax.js" type="text/javascript"></script>
+	<script src="http://localhost/Zend1.11/public/js/ajax-loading.js" type="text/javascript"></script>
+	<?php if(!empty($a_headerScript)) foreach ($a_headerScript as $script) {?>
+	<script src="<?php echo $script?>" type="text/javascript"></script>
+	<?php }?>
+	
+	<?php if(!empty($a_headerStyle)) foreach ($a_headerStyle as $style) {?>
+	<link rel="stylesheet" href="<?php echo $script?>" />
+	<?php }?>
+	<script type="text/javascript" src="jhttp://localhost/Zend1.11/public/s/demo.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#tree").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		})
+		
+	</script>
+<!--script for add more input starts-->
+<script type="text/javascript" src="js/jquery.multiFieldExtender-2.0.js"></script>
+  
+<script type="text/javascript">
+        $(document).ready(function() {
+                   $(".itemDetails").EnableMultiField();
+        });
+</script>
+  <!--script for add more input ends-->
+
+    
+</head>
+
+<body>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20" height="20"><img src="images/cor1.png" width="20" height="20"></td>
+        <td class="br-top">&nbsp;</td>
+        <td width="20"><img src="images/cor2.png" width="20" height="20"></td>
+      </tr>
+      <tr>
+        <td class="br-left">&nbsp;</td>
+        <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="header"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+              <tr>
+                <td><img src="images/logo.png" width="336" height="71"></td>
+                <td align="right" valign="top"><a href="index.php" title="Home">Home</a>   &nbsp;&nbsp;|&nbsp;&nbsp;   <a href="#" title="Sign Out">Sign Out</a></td>
+              </tr>
+            </table></td>
+            </tr>
+          <tr>
+            <td >
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="searchFieldsTable">
+              <tr>
+                <td align="left" valign="top" class="sidebar">
+					<?php echo $this->layout()->render('leftmenu');?>
+                </td>
+                <td valign="top" align="left" >
+                <?php echo $this->layout()->content; ?>
+                </td>
+              </tr>
+            </table></td>
+            </tr>
+        </table></td>
+        <td class="br-right">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><img src="images/cor3.png" width="20" height="20"></td>
+        <td class="br-bottom">&nbsp;</td>
+        <td><img src="images/cor4.png" width="20" height="20"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

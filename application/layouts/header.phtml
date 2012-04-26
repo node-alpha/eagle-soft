@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eagle Soft Switch</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="js/style2.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="js/jquery.treeview.js" type="text/javascript"></script>
+	<script src="js/common.js" type="text/javascript"></script>
+	<script src="js/core-ajax.js" type="text/javascript"></script>
+	<script src="js/ajax-loading.js" type="text/javascript"></script>
+	<?php if(!empty($a_headerScript)) foreach ($a_headerScript as $script) {?>
+	<script src="<?php echo $script?>" type="text/javascript"></script>
+	<?php }?>
+	
+	<?php if(!empty($a_headerStyle)) foreach ($a_headerStyle as $style) {?>
+	<link rel="stylesheet" href="<?php echo $script?>" />
+	<?php }?>
+	<script type="text/javascript" src="js/demo.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#tree").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		})
+		
+	</script>
+<!--script for add more input starts-->
+<script type="text/javascript" src="js/jquery.multiFieldExtender-2.0.js"></script>
+  
+<script type="text/javascript">
+        $(document).ready(function() {
+                   $(".itemDetails").EnableMultiField();
+        });
+</script>
+  <!--script for add more input ends-->
+
+    
+</head>
+
+<body>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20" height="20"><img src="images/cor1.png" width="20" height="20"></td>
+        <td class="br-top">&nbsp;</td>
+        <td width="20"><img src="images/cor2.png" width="20" height="20"></td>
+      </tr>
+      <tr>
+        <td class="br-left">&nbsp;</td>
+        <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="header"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+              <tr>
+                <td><img src="images/logo.png" width="336" height="71"></td>
+                <td align="right" valign="top"><a href="index.php" title="Home">Home</a>   &nbsp;&nbsp;|&nbsp;&nbsp;   <a href="#" title="Sign Out">Sign Out</a></td>
+              </tr>
+            </table></td>
+            </tr>
+          <tr>
+            <td >
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="searchFieldsTable">
+              <tr>
+                <td align="left" valign="top" class="sidebar">
+					<ul id="tree" class="filetree"  style="height:600px; overflow-y:scroll;">
+		                        <li style="margin-top:15px;"><span class="folder">Manage Accounts</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=Customer">Customers Account</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=Agent">Agent Account</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=Wholesale">Wholesale Account</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=Provider">Providers Account</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=Admin">Admin Account</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=InstitutionGroup">Institution &amp; Group Account</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Rates</span>
+		                            <ul>
+		                                <li><span class="folder">Calling Rates</span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=call_plan">Call Plan</a></span></li>
+		                                        <li><span class="folder"><a href="admin.php?page=#">Rate Card</a></span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=import_calling_rates">Import Calling Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=merge_calling_rates">Merge Calling Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=calling_rate_simulator">Calling Rate Simulator</a></span></li>
+		                                    </ul>
+		                                    </li>    
+		                                        <li><span class="file"><a href="admin.php?page=all_rates">All Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=update_calling_rates">Update Calling Rates</a></span></li>
+		                                    </ul>
+		                                </li>
+		                           		<li><span class="folder">SMS Rates</span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=sms_plan">SMS Plan</a></span></li>
+		                                        <li><span class="folder"><a href="admin.php?page=#">SMS Card</a></span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=import_sms_rates">Import SMS Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=merge_sms_rates">Merge SMS Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=calling_sms_simulator">Calling SMS Simulator</a></span></li>
+		                                    </ul>
+		                                    </li>
+		                                        <li><span class="file"><a href="admin.php?page=all_sms_rates">All SMS Rates</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=update_sms_rates">Update SMS Rates</a></span></li>
+		                                    </ul>
+		                            	</li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage System</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=current_calls">Current Calls</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=monitor_services">Monitor Services</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=restart_services">Restart Services</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Dialing Plan</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=least_cost_routing">Least Cost Routing</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=asr_routing">Asr Routing</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=call_rerouting">Call Rerouting</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=manage_gateway">Manage Gateway</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Billing</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=mb_customer_balance">Customer Balance</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=mb_agent_balance">Agent Balance</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=provider_balance">Provider Balance</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=payment_method">Payment Method</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Batches &amp; Voucher</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=batches">Batches</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=voucher">Voucher</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Numbers</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=access_numbers">Access Numbers</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=direct_dial">Direct Dial</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=manage_ivr">Manage IVR</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Invoices</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=receipt">Receipt</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=invoices">Invoices</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=configuration">Configuration</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage Pages</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=how_it_works">How it works</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=faq">FAQ</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=terms_conditions">Terms &amp; Conditions</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=features_benefits">Features &amp; Benefits</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=mobile_apps">Mobile Apps</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=philanthropic_project">Philanthropic Project</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=refer_friend">Refer A Friend</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder"><a href="admin.php?page=callback">Callback</a></span></li>
+		                        <li><span class="folder">Manage Email</span>
+		                            <ul>
+		                                <li><span class="file"><a href="admin.php?page=new_signup_email">New Signup Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=purchase_email">Purchase Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=raffle_email">Raffle Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=group_signup_email">Group Signup Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=bonus_email">Bonus Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=referal_email">Referal Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=referee_email">Referee Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=recharg_ by_paypal_email">Recharge by Paypal Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=direct_dial_email">Direct Dial Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=speed_dial_email">Speed Dial Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=registration_attempt_email">Registration Attempt Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=credit_card_expiration_reminder_email">Credit Card Expiration Reminder Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=auto_recharge_failed_email">Auto Recharge Failed Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=birthday_email">Birthday Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=free_trial_email">Free Trial Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=password_change_email">Password Change Email</a></span></li>
+		                                <li><span class="file"><a href="admin.php?page=newsletter">Newsletter</a></span></li>
+		                            </ul>
+		                        </li>
+		                        <li><span class="folder">Manage DID</span>
+		                            <ul>
+		                            	<li><span class="folder">Manage DID</span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=manage_did_add">Add</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=manage_did_group">Group</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=destination">Destination</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=import">Import</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=usage">Usage</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=billing">Billing</a></span></li>
+		                                    </ul>
+		                                <li><span class="folder">Outbound CID</span>
+		                                    <ul>
+		                                        <li><span class="file"><a href="admin.php?page=outbound_cid_add">Add</a></span></li>
+		                                        <li><span class="file"><a href="admin.php?page=outbound_cid_groups">Groups</a></span></li>
+		                                    </ul>
+		                            	</li>
+		                            </ul>
+		                    </li>
+		                    <li><span class="folder">Manage Report</span>
+		                        <ul>
+		                            <li><span class="folder">Call Revenue</span>
+		                                <ul>
+		                                    <li><span class="file"><a href="admin.php?page=customer">Customer</a></span></li>
+		                                    <li><span class="file"><a href="admin.php?page=reseller">Reseller</a></span></li>
+		                                    <li><span class="file"><a href="admin.php?page=wholeseller">Wholeseller</a></span></li>
+		                                    <li><span class="file"><a href="admin.php?page=company_client">Company Client</a></span></li>
+		                                    <li><span class="file"><a href="admin.php?page=total_revenue">Total Revenue</a></span></li>
+		                                </ul>
+		                        	</li>
+		                        	<li><span class="folder">Call Expense</span>
+		                                <ul>
+		                                    <li><span class="file"><a href="admin.php?page=provider">Provider</a></span></li>
+		                                    <li><span class="file"><a href="admin.php?page=total_expense">Total Expense</a></span></li>
+		                                </ul>
+		                            </li>
+		                        </ul>
+		                </li>
+		                <li><span class="folder">Promotions</span>
+		                    <ul>
+		                        <li><span class="file"><a href="admin.php?page=manager_seasonal_promotion">Manager Seasonal Promotion</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=manager_free_calls">Manager Free Calls</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=manage_birthday_bonus">Manage Birthday Bonus</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=manage_raffle">Manage Raffle</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=manage_percentage_bonus">Manage % Bonus</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=manage_referrals">Manage Referrals</a></span></li>
+		                    </ul>
+		                </li>
+		                <li><span class="folder">Manage IVR</span>
+		                    <ul>
+		                        <li><span class="file"><a href="admin.php?page=all_ivrs">All IVR's</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=import_ivrs">Import IVR</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=play_ivrs">Play IVR</a></span></li>
+		                    </ul>
+		                </li>
+		                <li><span class="folder">Manage System Settings</span>
+		                    <ul>
+		                        <li><span class="file"><a href="admin.php?page=global_setting">Global Setting</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=group_setting">Group Setting</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=add_custom_setting">Add Custom Setting</a></span></li>
+		                        <li><span class="file"><a href="admin.php?page=edit_settings">Edit Settings</a></span></li>
+		                    </ul>
+		                </li>
+					</ul>
+                </td>
+                <td valign="top" align="left" >
+                <?php echo $this->layout()->content; ?>
+                </td>
+              </tr>
+            </table></td>
+            </tr>
+        </table></td>
+        <td class="br-right">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><img src="images/cor3.png" width="20" height="20"></td>
+        <td class="br-bottom">&nbsp;</td>
+        <td><img src="images/cor4.png" width="20" height="20"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

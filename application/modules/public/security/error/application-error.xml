@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<local>
+	<categories>
+	</categories>
+	
+	<controlData>
+		<action category="catText" mandatory="0" min="0" max="100"/>
+		<controller category="catText" mandatory="0" min="0" max="100"/>
+		<module category="catText" mandatory="0" min="0" max="100"/>
+		<error_handler category="catText" mandatory="0"/>
+	</controlData>
+</local>
