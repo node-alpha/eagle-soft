@@ -1,24 +1,11 @@
 <?php
 
 /**
- * Default controller
- *
- */
-class Customer_IndexController extends Core_Controller_Action
-{	
-/**
  * Customer controller
  *
  */
 class Customer_IndexController extends BaseController
-{
-
-	/**
-	 * Default action
-	 * @return void
-	 */
-	public function indexAction(){
-		
+{		
 	public function indexAction ()
 	{
 		$o_CountryModel = new Model_Country();
