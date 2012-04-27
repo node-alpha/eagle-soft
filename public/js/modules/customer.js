@@ -1,5 +1,5 @@
 CUSTOMER_ACCOUNT = {
-	createCustomerPath : 'admin.php?page=Customer&action=create',
+	createCustomerPath : sz_PublicHost + 'customer/index/create',
 	
 	init : function(){
 		$('#create_button').click(function(){
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var query= popURL.split('?'); 
 		var dim= query[1].split('&'); 
 		var popWidth = dim[0].split('=')[1]; //Gets the first query string value 
-		$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="images/dialog_close.png" class="btn_close" title="Close" alt="Close" /></a>'); 
+		$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="'+ sz_PublicHost +'images/dialog_close.png" class="btn_close" title="Close" alt="Close" /></a>'); 
 		var popMargTop = ($('#' + popID).height() + 10) / 2; 
 		var popMargLeft = ($('#' + popID).width() + 80) / 2; 
 		//Apply Margin to Popup 

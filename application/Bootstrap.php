@@ -14,7 +14,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		        'model' => array(
 		            'path'      => APPLICATION_PATH . '/models/',
 		            'namespace' => 'Model',
+		        ),
+		        'controller' => array(
+		        	'path' => APPLICATION_PATH . '/modules/',
+		        	'namespace' => '',
 		        )
+		        		        
 		    )
 		));
 	}

@@ -79,13 +79,14 @@ http://vipulilmbachiya.com
                         if ($(this).attr("id")) {
                             var strid = $(this).attr("id");
                             var strname = "";
-
-                            if ($(this).attr("name")) {
-                                strname = $(this).attr("name");
+                            var index = fieldCount + 1;
+                            if ($(this).attr("orginName")) {
+                                strname = $(this).attr("orginName");
                             }
 
                             $(this).attr("id", strid + "_" + fieldCount);
-                            $(this).attr("name", strname + "$" + fieldCount);
+                            
+                            $(this).attr("name", strname + "["+ index +"]");
                         }
                     });
 
