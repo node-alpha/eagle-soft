@@ -7,7 +7,7 @@ class Model_Table_Customer extends Model_Table_Base
 	 * Search Customer
 	 * @return Array
 	 */
-    public function a_fSearchCustomer ($the_a_Data)
+    public function a_fSearchCard ($the_a_Data)
     {
         $o_Select = $this->_db->select()->from($this->_name);
         foreach ($the_a_Data as $sz_Key => $sz_Value) {

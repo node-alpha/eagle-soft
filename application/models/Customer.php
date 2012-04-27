@@ -5,14 +5,91 @@ class Model_Customer extends Model_Base
 	/*
      * Search Customer
      */
-	public function a_fSearchCustomer ($a_the_Data)
+	public function a_fSearchCard ($the_a_Data)
 	{
 		$o_CustomerTable = new Model_Table_Customer();
-		return $o_CustomerTable->a_fSearchCustomer($a_the_Data);
+		return $o_CustomerTable->a_fSearchCard($the_a_Data);
 	}
 
-	public function i_fCreateCustomer ()
+	public function i_fInsertCard ($the_a_Data)
 	{
+		$a_Data = array(
+					'id' => NULL,
+					'creationdate' =>  'NOW()',
+					'firstusedate' =>  '0000-00-00 00:00:00',
+					'expirationdate' =>  'DATE_ADD(NOW(), INTERVAL 10 YEAR)',
+					'enableexpire' =>  0,
+					'expiredays' =>  0,
+					'username' =>  $the_a_Data['username'],
+					'useralias' =>  $the_a_Data['useralias'],
+					'uipass' =>  $the_a_Data['password'],
+					'type' =>  'W',
+					'credit' =>  $the_a_Data['fund'],
+					'tariff' =>  1,
+					'id_didgroup' =>  -1,
+					'activated' =>  't',
+					'status' =>  1,
+					'lastname' =>  '',
+					'firstname' =>  $the_a_Data['firstname'],
+					'address' =>  '',
+					'city' =>  '',
+					'state' =>  '',
+					'country' =>  $the_a_Data['country'],
+					'zipcode' =>  '',
+					'phone' =>  $the_a_Data['phone'][0],
+					'email' =>  $the_a_Data['email'],
+					'fax' =>  '',
+					'inuse' =>  0,
+					'simultaccess' =>  1,
+					'currency' =>  'USD',
+					'lastuse' =>  'NOW()',
+					'nbused' =>  3,
+					'typepaid' =>  0,
+					'creditlimit' =>  0,
+					'voipcall' =>  0,
+					'sip_buddy' =>  1,
+					'iax_buddy' =>  1,
+					'language' =>  'en',
+					'redial' =>  '',
+					'runservice' =>  0,
+					'nbservice' =>  0,
+					'id_campaign' =>  -1,
+					'num_trials_done' =>  0,
+					'vat' =>  0,
+					'servicelastrun' =>  '0000-00-00 00:00:00',
+					'initialbalance' =>  0.00000,
+					'invoiceday' =>  1,
+					'autorefill' =>  0,
+					'loginkey' =>  '',
+					'mac_addr' =>  '00-00-00-00-00-00',
+					'id_timezone' =>  49,
+					'tag' =>  '',
+					'voicemail_permitted' =>  0,
+					'voicemail_activated' =>  0,
+					'last_notification' =>  NULL,
+					'email_notification' =>  '',
+					'notify_email' =>  0,
+					'credit_notification' =>  -1,
+					'id_group' =>  1,
+					'company_name' =>  '',
+					'company_website' =>  '',
+					'vat_rn' =>  NULL,
+					'traffic' =>  NULL,
+					'traffic_target' =>  '',
+					'discount' =>  0.00,
+					'restriction' =>  0,
+					'id_seria' =>  -1,
+					'serial' =>  NULL,
+					'block' =>  0,
+					'lock_pin' =>  '0',
+					'lock_date' =>  NULL,
+					'refills_overal' =>  0.00000,
+					'bonus_get' =>  0.00000,
+					'refills_cleared' =>  0.00000,
+					'reseller_id' =>  ''
+				);
+		$o_CustomerTable = new Model_Table_Customer();
+		return $o_CustomerTable->i_fInsert($a_Data);
 	}
 
 	public function b_fValidate ($the_a_Params, &$the_o_MessageHandle)
@@ -74,8 +151,7 @@ class Model_Customer extends Model_Base
 				$the_o_MessageHandle->v_fSetErrorMessage('Add fund must be numeric !');
 			}
 		}
-		
-		// Check exists DID
+		return $the_o_MessageHandle->b_fIsError();
 	}
 
 	public function gen_sipid ()

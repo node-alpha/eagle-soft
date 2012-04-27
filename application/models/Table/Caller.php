@@ -16,4 +16,12 @@ class Model_Table_Caller extends Model_Table_Base
 		}
 		return $this->_db->fetchOne($o_Select);
 	}
+	
+	/**
+	 * Insert caller
+	 */
+	public function i_fInsert($the_a_Data)
+	{
+		return $this->insert($the_a_Data);
+	}
 }
