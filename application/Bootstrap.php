@@ -19,6 +19,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		            'path'      => '/application/core/',
 		            'namespace' => 'Core',
 		        )
+		        		        
 		    )
 		));
 	}
@@ -46,7 +47,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 								'password' => $o_Config->db->password, 
 								'dbname' => $o_Config->db->db_name
 							)); 
-		$db->setFetchMode(Zend_Db::FETCH_BOTH); 
+		$db->setFetchMode(Zend_Db::FETCH_OBJ);
 		Zend_Db_Table::setDefaultAdapter($db); 
 	}
 }

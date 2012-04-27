@@ -1,0 +1,11 @@
+<?php if (is_array($this->a_Response) && !empty($this->a_Response)) {
+	foreach ($this->a_Response as $o_Response) {
+?>
+<tr>
+	<td><?php echo $o_Response->firstname?></td>
+	<td><?php echo $o_Response->username?></td>
+	<td><?php echo $o_Response->email?></td>
+	<td><?php echo $o_Response->credit?></td>
+</tr>
+
+<?php }}?>

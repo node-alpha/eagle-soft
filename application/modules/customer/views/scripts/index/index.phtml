@@ -1,0 +1,168 @@
+<td align="left" valign="top" id="content" class="key">
+<h2>Customers Account</h2>
+<table border="0" cellspacing="0" cellpadding="8" id="form-search">
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td width="200" align="center"><a href="#?w=510"
+			rel="customeraccountpopup" class="poplight"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-caccount.gif" width="103" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>Account ID/ Pin #</td>
+		<td><input name="search_account_id" type="text" class="txt1"
+			id="search_account_id"></td>
+		<td align="center"><a href="customer_account.php"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-account.gif" width="90" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>Email/Username</td>
+		<td><input name="search_email" type="text" class="txt1"
+			id="search_email"></td>
+		<td align="center"><a href="customer_balance.php"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-balance.gif" width="90" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>IP Address</td>
+		<td><input name="search_ip" type="text" class="txt1" id="search_ip"></td>
+		<td align="center"><a href="customer_callhistory.php"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-call-history.gif" width="90" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>Batch #</td>
+		<td><input name="search_batch_number" type="text" class="txt1"
+			id="search_batch_number"></td>
+		<td align="center"><a href="customer_adjustment.php"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-adjustment.gif" width="90" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>Batch Name</td>
+		<td><input name="search_batch_name" type="text" class="txt1"
+			id="search_batch_name"></td>
+		<td align="center"><a href="customer_statement.php"><img
+			src="<?php echo $this->sz_PublicHost?>/images/bt-statement.gif" width="90" height="29" border="0"></a></td>
+	</tr>
+	<tr>
+		<td height="60">&nbsp;</td>
+		<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="left"><a href="#" id="search-form"><img src="<?php echo $this->sz_PublicHost?>/images/bt-search.gif"
+					width="90" height="29" border="0"></a></td>
+				<td align="center"><a href="#" id="clear-form"><img src="<?php echo $this->sz_PublicHost?>/images/bt-clear.gif"
+					width="74" height="29" border="0"></a></td>
+			</tr>
+		</table>
+		</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="1" cellpadding="5" cellspacing="0"	bordercolor="#c4c4c4" style="border-collapse: collapse" id="list-customer">
+	<thead>
+		<tr>
+			<td bgcolor="#dedede"><strong>Full Name</strong></td>
+			<td bgcolor="#dedede"><strong>Account ID/Pin #</strong></td>
+			<td bgcolor="#dedede"><strong>Email/Username</strong></td>
+			<td bgcolor="#dedede"><strong>Balance</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<div id="customeraccountpopup" class="popup_block">
+	<div>
+    	<h1 style="width:510px; margin-bottom:15px;">Create Customer Account</h1>
+        	<div class="cacccountinner">
+                <dl>
+                    <dt>Full Name</dt>
+                    <dd><input name="firstname" type="text" class="popup-inputbox" id="firstname"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Email</dt>
+                    <dd><input name="email" type="text" class="popup-inputbox" id="email"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Password</dt>
+                    <dd><input name="password" type="password" class="popup-inputbox" id="password"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Country</dt>
+                    <dd>
+                    	<?php echo $this->formSelect('country', '', 'class="popup-selectbox"', $this->a_Countries)?>
+                        <br><span class="font11">Select country to Add Direct Dial</span>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Add Fund($)</dt>
+                    <dd><input name="fund" type="text" class="popup-inputbox" id="fund"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Add Caller ID #1</dt>
+                    <dd><div class="itemDetails"><input name="phone[0]" orginName="phone" type="text" class="popup-inputbox" id="phone1"></div><div><span class="font11">Like: Country code + Number</span></div></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><h3>Add Speed Dial List</h3></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>To Dial</dt>
+                    <dd>
+                        <table width="100%" cellpadding="0" cellspacing="0" class="popuptable">
+                        <tr>
+                            <td width="75%" valign="top">
+                            <div class="itemDetails">
+                                <div class="clear"></div>
+                                <div class="finput"><input id="spd_dial" name="spd_dial[0]" orginName="spd_dial" type="text" class="popup-inputbox1 clonedInput"  value="Name" onblur="this.value=this.value==''?'Name':this.value;" onfocus="this.value=this.value=='Name'?'':this.value;"></div>
+                                <div  class="sinput"><input name="dest[0]" orginName="dest" type="text" class="popup-inputbox2" id="dest"  value="Destination" onblur="this.value=this.value==''?'Destination':this.value;" onfocus="this.value=this.value=='Destination'?'':this.value;"><br><span class="font11">Like: Country code + Number</span></div>
+                                <div class="tinput"><span class="font11">Press 1#</span></div>
+                            </div>
+                            <div class="clear"></div>
+                            </td>
+                        </tr>
+                        </table>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><h3>Add Direct Dial</h3></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Direct Number</dt>
+                    <dd><input name="direct_number" type="text" class="popup-inputbox" id="direct_number"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Name</dt>
+                    <dd><input name="name" type="text" class="popup-inputbox" id="name"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>International Number</dt>
+                    <dd><input name="number" type="text" class="popup-inputbox" id="number"><br><span class="font11">Like: Country code + Number</span></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><input name="create" type="submit" value="Submit" class="btn" id="create_button"></dd>
+                <div class="clear"></div>
+                </dl>
+            </div>
+	</div><!--customeraccountpopup ends-->
+</div>
+</td>
