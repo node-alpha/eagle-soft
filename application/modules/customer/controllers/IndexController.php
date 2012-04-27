@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 /**
  * Default controller
@@ -7,7 +6,6 @@
  */
 class Customer_IndexController extends Core_Controller_Action
 {	
-=======
 /**
  * Customer controller
  *
@@ -15,15 +13,12 @@ class Customer_IndexController extends Core_Controller_Action
 class Customer_IndexController extends BaseController
 {
 
->>>>>>> 340f301f764ca51cc1dc3f238d4f14b1bc5cc2ea
 	/**
 	 * Default action
 	 * @return void
 	 */
-<<<<<<< HEAD
 	public function indexAction(){
 		
-=======
 	public function indexAction ()
 	{
 		$o_CountryModel = new Model_Country();
@@ -104,7 +99,6 @@ class Customer_IndexController extends BaseController
 		$a_Response = $o_CustomerModel->a_fSearchCard($a_DataSearch);
 		$this->view->assign('a_Response', $a_Response);
 		$this->_helper->layout->disableLayout();
->>>>>>> 340f301f764ca51cc1dc3f238d4f14b1bc5cc2ea
 	}
 }
 ?>
