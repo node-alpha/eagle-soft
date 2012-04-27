@@ -13,7 +13,10 @@ class Model_Table_Customer extends Model_Table_Base
 		$o_Select = $this->_db->select()->from($this->_name);
 		foreach ($the_a_Data as $sz_Key => $sz_Value)
 		{
-			$o_Select->orWhere($sz_Key . ' like"%'. $sz_Value .'%" ');
+			if ($sz_Value)
+			{
+				$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+			}
 		}
 		return $this->_db->fetchAll($o_Select);
 	}

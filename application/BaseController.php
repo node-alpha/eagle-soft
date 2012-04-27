@@ -30,7 +30,7 @@ class BaseController extends Zend_Controller_Action
 	
 	public function sz_fGetPublicHost()
 	{
-		return $this->sz_fGetHost() . '/public/';
+		return $this->sz_fGetHost() . $this->view->baseUrl() . '/';
 	}
 	
 	/**
