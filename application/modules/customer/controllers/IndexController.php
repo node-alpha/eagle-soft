@@ -61,30 +61,35 @@ class Customer_IndexController extends BaseController
 					{
 						$a_Params['dest'][$i_Key] = "";
 					}
-					if ($sz_Dial)
-					{
-						// Insert phone
-						if (substr($sz_Phone, 0, 1) == "+")
-						{
-							$sz_Phone = substr($sz_Phone, 1);
-						}
-						if (substr($sz_Phone, 0, 2) == "00")
-						{
-							$sz_Phone = substr($sz_Phone, 2);
-						}
-						$a_DataPhone = array('cid' => $sz_Phone , 'id_cc_card' => $i_CardId , 'creationdate' => 'NOW()' , 'activated' => 't');
-						$o_CallerTable = new Model_Table_Caller();
-						$o_CallerTable->i_fInsert($a_DataPhone);
-					}
+					$a_Dial = array('speeddial' => $i_Key + 1 , 'name' => $sz_Dial , 'phone' => $a_Params['dest'][$i_Key] , 'creationdate' => 'Now()' , 'id_cc_card' => $i_CardId);
+					$o_SpeedDialTable = new Model_Table_SpeedDial();
+					$o_SpeedDialTable->i_fInsert($a_Dial);
 				}
 			}
 		}
+		if (! $o_MessageHandle->b_fIsError())
+		{
+			$o_MessageHandle->v_fSetSuccess();
+			$o_MessageHandle->v_fSetMessage('Create Customer successful !');
+		}
+		echo $o_MessageHandle;
+		die();
 	}
 
 	public function searchAction ()
 	{
-		// ajax Request
-		$this->_diableView = true;
+		$a_Params = $this->v_fClean($this->_request->getParams());
+		$a_DataSearch = array(
+						'id' => $a_Params['search_account_id'],
+						'email' => $a_Params['search_email'],
+						'wholesale_orig_ip' => $a_Params['search_ip'],
+						'phone' => $a_Params['search_batch_number'],
+						'firstname' => $a_Params['search_batch_name'],
+						);
+		$o_CustomerModel = new Model_Customer();
+		$a_Response = $o_CustomerModel->a_fSearchCard($a_DataSearch);
+		$this->view->assign('a_Response', $a_Response);
+		$this->_helper->layout->disableLayout();
 	}
 }
 ?>

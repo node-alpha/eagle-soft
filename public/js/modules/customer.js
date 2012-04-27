@@ -1,27 +1,52 @@
 CUSTOMER_ACCOUNT = {
 	createCustomerPath : sz_PublicHost + 'customer/index/create',
+	searchCustomerPath : sz_PublicHost + 'customer/index/search',
 	
 	init : function(){
 		$('#create_button').click(function(){
 			CUSTOMER_ACCOUNT.createCustomer();
 		});
+		$('#search-form').click(function(e){
+			e.preventDefault();
+			CUSTOMER_ACCOUNT.searchCustomer();
+		});
+		
+		$('#clear-form').click(function(e){
+			e.preventDefault();
+			$('#form-search').find('input[type="text"]').val('');
+		});
 	},
 	createCustomer: function(){
-		$dataRequest = $('#customeraccountpopup').find('input, select').serializeArray(); 
+		var $dataRequest = $('#customeraccountpopup').find('input, select').serializeArray(); 
 		ajaxCore.ajaxGetJson(
 			CUSTOMER_ACCOUNT.createCustomerPath,
 			$dataRequest,
 			function(response){
-				if (response.sz_ErrorMessage)	
+				console.log(response);
+				if (response.sz_Message)	
 				{
-					alert(response.sz_ErrorMessage);
+					alert(response.sz_Message);
+					$('.btn_close').click();
 				}
 			},
 			function(response){
-				if (response.sz_ErrorMessage)	
+				if (response.sz_Message)	
 				{
-					alert(sz_ErrorMessage);
+					alert(response.sz_Message);
 				}
+			});
+	},
+	
+	searchCustomer: function(){
+		var $dataRequest = $('#form-search').find('input, select').serializeArray(); 
+		ajaxCore.ajaxGetHtml(
+			CUSTOMER_ACCOUNT.searchCustomerPath,
+			$dataRequest,
+			function(response){
+				$('#list-customer tbody').html(response);
+			},
+			function(response){
+				alert('have error !')
 			});
 	}
 }

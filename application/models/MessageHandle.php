@@ -1,7 +1,7 @@
 <?php
 class Model_MessageHandle extends Model_Base
 {
-	private $i_Code = '';
+	private $i_Code = 1;
 	private $a_Message = array();
 	private $sz_Format = 'TEXT';
 	private $a_Return = array();
@@ -47,7 +47,7 @@ class Model_MessageHandle extends Model_Base
 	 */
 	public function b_fIsError ()
 	{
-		return $this->i_Code;
+		return !$this->i_Code;
 	}
 
 	/**

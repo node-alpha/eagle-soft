@@ -1,6 +1,6 @@
 <td align="left" valign="top" id="content" class="key">
 <h2>Customers Account</h2>
-<table border="0" cellspacing="0" cellpadding="8">
+<table border="0" cellspacing="0" cellpadding="8" id="form-search">
 	<tr>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
@@ -47,9 +47,9 @@
 		<td>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td align="left"><a href="#"><img src="<?php echo $this->sz_PublicHost?>/images/bt-search.gif"
+				<td align="left"><a href="#" id="search-form"><img src="<?php echo $this->sz_PublicHost?>/images/bt-search.gif"
 					width="90" height="29" border="0"></a></td>
-				<td align="center"><a href="#"><img src="<?php echo $this->sz_PublicHost?>/images/bt-clear.gif"
+				<td align="center"><a href="#" id="clear-form"><img src="<?php echo $this->sz_PublicHost?>/images/bt-clear.gif"
 					width="74" height="29" border="0"></a></td>
 			</tr>
 		</table>
@@ -58,20 +58,23 @@
 	</tr>
 </table>
 <p>&nbsp;</p>
-<table width="100%" border="1" cellpadding="5" cellspacing="0"
-	bordercolor="#c4c4c4" style="border-collapse: collapse">
-	<tr>
-		<td bgcolor="#dedede"><strong>Full Name</strong></td>
-		<td bgcolor="#dedede"><strong>Account ID/Pin #</strong></td>
-		<td bgcolor="#dedede"><strong>Email/Username</strong></td>
-		<td bgcolor="#dedede"><strong>Balance</strong></td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+<table width="100%" border="1" cellpadding="5" cellspacing="0"	bordercolor="#c4c4c4" style="border-collapse: collapse" id="list-customer">
+	<thead>
+		<tr>
+			<td bgcolor="#dedede"><strong>Full Name</strong></td>
+			<td bgcolor="#dedede"><strong>Account ID/Pin #</strong></td>
+			<td bgcolor="#dedede"><strong>Email/Username</strong></td>
+			<td bgcolor="#dedede"><strong>Balance</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
 </table>
 <div id="customeraccountpopup" class="popup_block">
 	<div>
