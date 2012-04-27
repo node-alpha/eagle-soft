@@ -1,5 +1,5 @@
 <?php 
-class BaseController extends Zend_Controller_Action 
+class BaseControler extends Zend_Controller_Action 
 {
 	
 }
