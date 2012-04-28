@@ -18,11 +18,11 @@ class Model_Table_Customer extends Model_Table_Base
 				if ($sz_Key == 'cid')
 				{
 					$o_Select->join(array('call' => 'cc_callerid'),'card.id = call.id_cc_card','cid');
-					$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+					$o_Select->Where('LOWER(call.' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
 				}
 				else
 				{
-					$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+					$o_Select->Where('LOWER(card.' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
 				}
 			}
 		}
