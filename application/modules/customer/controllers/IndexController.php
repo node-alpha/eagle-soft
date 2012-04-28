@@ -18,14 +18,14 @@ class Customer_IndexController extends Core_Controller_Action
 	public function createAction ()
 	{
 		$o_MessageHandler = $this->b_fValidate();
-<<<<<<< .mine		if($o_MessageHandler->b_fHasError())
+		if($o_MessageHandler->b_fHasError())
 		{
 			echo $o_MessageHandler;
 			$this->_helper->viewRenderer->setNoRender();
-=======>>>>>>> .theirs			$this->_helper->layout->disableLayout();
-<<<<<<< .mine			return;
+			$this->_helper->layout->disableLayout();
+			return;
 		}
-=======>>>>>>> .theirs		$o_CustomerModel = new Model_Customer();
+		$o_CustomerModel = new Model_Customer();
 		$a_Params = $this->v_fClean($this->_request->getParams());
 		$b_Valid = $o_CustomerModel->b_fValidate($a_Params, $o_MessageHandle);
 		if ($b_Valid)
