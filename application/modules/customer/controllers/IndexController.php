@@ -17,7 +17,14 @@ class Customer_IndexController extends Core_Controller_Action
 
 	public function createAction ()
 	{
-		$o_MessageHandle = new Model_MessageHandle();
+		$o_MessageHandler = $this->b_fValidate();
+		if($o_MessageHandler->b_fHasError())
+		{
+			echo $o_MessageHandler;
+			$this->_helper->viewRenderer->setNoRender();
+			$this->_helper->layout->disableLayout();
+			return;
+		}
 		$o_CustomerModel = new Model_Customer();
 		$a_Params = $this->v_fClean($this->_request->getParams());
 		$b_Valid = $o_CustomerModel->b_fValidate($a_Params, $o_MessageHandle);
@@ -73,7 +80,7 @@ class Customer_IndexController extends Core_Controller_Action
 	}
 
 	public function searchAction ()
-	{
+	{		
 		$a_Params = $this->v_fClean($this->_request->getParams());
 		$a_DataSearch = array(
 						'id' => $a_Params['search_account_id'],
