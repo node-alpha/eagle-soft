@@ -61,4 +61,10 @@ class Core_Controller_Action extends Zend_Controller_Action
 		}
 		return $the_a_Data;
 	}
+	
+	public function b_fValidate()
+	{
+		$o_Validate = new Core_Validate($this->_request);		
+		return $o_Validate->o_fValidate(); 
+	}
 }
