@@ -1,7 +1,7 @@
 <?php
 class Core_Controller_Action extends Zend_Controller_Action 
 {	
-public function init()
+	public function init()
 	{
 		$this->view->headLink()->appendStylesheet($this->sz_fGetPublicHost() . 'css/style.css');
 		$this->view->headLink()->appendStylesheet($this->sz_fGetPublicHost() . '/js/style2.css');

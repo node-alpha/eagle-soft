@@ -11,7 +11,7 @@ class IndexController extends Core_Controller_Action
 	 * @return void
 	 */
 	public function indexAction(){    
-		    			
+		 			
 	}	
 }
 ?>

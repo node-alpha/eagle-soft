@@ -4,10 +4,10 @@
  * Customer controller
  *
  */
-class Customer_IndexController extends BaseController
+class Customer_IndexController extends Core_Controller_Action
 {		
 	public function indexAction ()
-	{
+	{	
 		$o_CountryModel = new Model_Country();
 		$this->view->headScript()->appendFile($this->sz_fGetPublicHost() . 'js/modules/customer.js', 'text/javascript');
 		$this->view->headScript()->appendFile($this->sz_fGetPublicHost() . 'js/jquery.multiFieldExtender-2.0.js', 'text/javascript');
