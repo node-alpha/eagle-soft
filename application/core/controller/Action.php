@@ -28,7 +28,7 @@ class Core_Controller_Action extends Zend_Controller_Action
 	
 	public function sz_fGetPublicHost()
 	{
-		return $this->sz_fGetHost() . '/';
+		return $this->sz_fGetHost() . $this->view->baseUrl() . '/';
 	}
 	
 	/**

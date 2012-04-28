@@ -12,7 +12,6 @@ $paths = array(
 
 set_include_path(implode(PATH_SEPARATOR, $paths));
 require_once 'Zend/Application.php';
-require_once APPLICATION_PATH . '/BaseController.php';
 require_once ROOT_DIR . '/library/common/functions.php';
 $application = new Zend_Application(
 			    	    APPLICATION_ENV,
