@@ -17,7 +17,7 @@ class Customer_IndexController extends Core_Controller_Action
 
 	public function createAction ()
 	{
-		$o_MessageHandle = new Model_MessageHandle();
+		$o_MessageHandle = new Core_MessageHandle();
 		$o_CustomerModel = new Model_Customer();
 		$a_Params = $this->v_fClean($this->_request->getParams());
 		$b_Valid = $o_CustomerModel->b_fValidate($a_Params, $o_MessageHandle);
