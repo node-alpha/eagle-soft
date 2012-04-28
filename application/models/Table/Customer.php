@@ -10,12 +10,20 @@ class Model_Table_Customer extends Model_Table_Base
 	 */
 	public function a_fSearchCard ($the_a_Data)
 	{
-		$o_Select = $this->_db->select()->from($this->_name);
+		$o_Select = $this->_db->select()->from(array('card' => $this->_name));
 		foreach ($the_a_Data as $sz_Key => $sz_Value)
 		{
 			if ($sz_Value)
 			{
-				$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+				if ($sz_Key == 'cid')
+				{
+					$o_Select->join(array('call' => 'cc_callerid'),'card.id = call.id_cc_card','cid');
+					$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+				}
+				else
+				{
+					$o_Select->Where('LOWER(' .$sz_Key . ') like LOWER("%'. $sz_Value .'%")');
+				}
 			}
 		}
 		return $this->_db->fetchAll($o_Select);

@@ -1,6 +1,7 @@
 CUSTOMER_ACCOUNT = {
 	createCustomerPath : sz_PublicHost + 'customer/index/create',
 	searchCustomerPath : sz_PublicHost + 'customer/index/search',
+	loadStatePath : sz_PublicHost + 'customer/index/load-state',
 	
 	init : function(){
 		$('#create_button').click(function(){
@@ -14,6 +15,10 @@ CUSTOMER_ACCOUNT = {
 		$('#clear-form').click(function(e){
 			e.preventDefault();
 			$('#form-search').find('input[type="text"]').val('');
+		});
+		
+		$('#country').change(function(){
+			CUSTOMER_ACCOUNT.loadState($(this).val());
 		});
 	},
 	createCustomer: function(){
@@ -48,6 +53,19 @@ CUSTOMER_ACCOUNT = {
 			function(response){
 				alert('have error !')
 			});
+	},
+	
+	loadState : function(countryCode)
+	{
+		ajaxCore.ajaxGetHtml(
+				CUSTOMER_ACCOUNT.loadStatePath,
+				{country: countryCode},
+				function(response){
+					$('#load-state').html(response);
+				},
+				function(response){
+					alert('have error !')
+				});
 	}
 }
 $(function(){CUSTOMER_ACCOUNT.init();})

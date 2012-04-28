@@ -9,5 +9,11 @@ class Model_Table_Country extends Zend_Db_Table_Abstract
 		$o_Select = $this->_db->select()->from(array($this->_name), array('*'))->order('countryname ASC');
 		return (array)$this->_db->fetchAll($o_Select);
 	}
+	
+	public function a_fGetAllState ()
+	{
+		$o_Select = $this->_db->select()->from(array('tblusarea'), array('*'))->order('area_name ASC');
+		return (array)$this->_db->fetchAll($o_Select);
+	}
 }
 ?>

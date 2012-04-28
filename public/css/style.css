@@ -143,7 +143,7 @@ a.btn{
 	position: fixed; left: 0; top: 0;
 	width: 100%; height: 100%;
 	opacity: .80;
-	z-index: 9999;
+	z-index: 100;
 }
 .popup_block{
 	display: none; /*--hidden by default--*/
@@ -155,7 +155,7 @@ a.btn{
 	position: fixed;
 	top: 50%; 
 	left: 50%;
-	z-index: 99999;
+	z-index: 101;
 	/*--CSS3 Rounded Corners--*/
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -333,7 +333,6 @@ h3{
     float:left;
 }
 
-skin-main.css (line 2649)
 .load-waiting {
     display: block;
 }

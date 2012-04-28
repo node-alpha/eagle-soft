@@ -81,10 +81,23 @@ class Customer_IndexController extends Core_Controller_Action
 						'wholesale_orig_ip' => $a_Params['search_ip'],
 						'phone' => $a_Params['search_batch_number'],
 						'firstname' => $a_Params['search_batch_name'],
+						'cid' => $a_Params['search_callerid'],
 						);
 		$o_CustomerModel = new Model_Customer();
 		$a_Response = $o_CustomerModel->a_fSearchCard($a_DataSearch);
 		$this->view->assign('a_Response', $a_Response);
+		$this->_helper->layout->disableLayout();
+	}
+	
+	public function loadStateAction()
+	{
+		$a_State = array();
+		if ($this->_request->getParam('country') == 'USA')
+		{
+			$o_CountryModel = new Model_Country();
+			$a_State = $o_CountryModel->a_fGetListState();
+		}
+		$this->view->assign('a_State', $a_State);
 		$this->_helper->layout->disableLayout();
 	}
 }

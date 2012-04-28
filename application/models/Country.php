@@ -13,4 +13,16 @@ class Model_Country extends Model_Base
 		}
 		return $a_ListCountry;
 	}
+	
+	public function a_fGetListState ()
+	{
+		$o_CountryTable = new Model_Table_Country();
+		$a_State = $o_CountryTable->a_fGetAllState();
+		$a_ListState = array();
+		foreach ($a_State as $o_State)
+		{
+			$a_ListState[$o_State->area_code] = $o_State->area_name;
+		}
+		return $a_ListState;
+	}
 }
