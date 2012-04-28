@@ -73,6 +73,7 @@ $(document).ready(function() {
 	// 
 	$('a.poplight[href^=#]').click(function() { 
 		$('#customeraccountpopup').find('input[type="text"], select').val('');
+		$('#customeraccountpopup').find('#load-state').html('');
 		var popID = $(this).attr('rel'); //Get Popup Name 
 		var popURL = $(this).attr('href'); //Get Popup href to define size 
 		var query= popURL.split('?'); 
