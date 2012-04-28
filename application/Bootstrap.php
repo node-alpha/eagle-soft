@@ -9,19 +9,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	{		
 		$autoloader = new Zend_Application_Module_Autoloader(array( 
 				'namespace' => '', 
-				'basePath' => dirname(__FILE__),
+				'basePath' => APPLICATION_PATH,
 				'resourceTypes' => array(
 		        'model' => array(
-		            'path'      => APPLICATION_PATH . '/models/',
+		            'path'      => 'models/',
 		            'namespace' => 'Model',
 		        ),
-		        'common' => array(
-		        	'path' => APPLICATION_PATH . '/library/common/',
-		        	'namespace' => '',
-		        )
-		        		        
+		        'core' => array(
+		            'path'      => 'core/',
+		            'namespace' => 'Core',
+		        )        
 		    )
 		));
+		return $autoloader;
 	}
 	
 	/**
