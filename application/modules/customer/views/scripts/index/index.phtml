@@ -88,7 +88,7 @@
     	<h1 style="width:510px; margin-bottom:15px;">Create Customer Account</h1>
         	<div class="cacccountinner">
                 <dl>
-                    <dt>Account number</dt>
+                    <dt>Username</dt>
                     <dd><input name="username" type="text" class="popup-inputbox" id="username"></dd>
                 <div class="clear"></div>
                 </dl>
@@ -180,14 +180,14 @@
 	<div>
     	<h1 style="width:510px; margin-bottom:15px;">Edit Customer Account</h1>
         	<div class="cacccountinner">
-                <dl>
-                    <dt>Full Name</dt>
-                    <dd><input name="firstname" type="text" class="popup-inputbox" id="firstname"></dd>
+        		<dl>
+                    <dt>Account number</dt>
+                    <dd><input name="username" type="text" class="popup-inputbox" id="username"></dd>
                 <div class="clear"></div>
                 </dl>
                 <dl>
-                    <dt>Email</dt>
-                    <dd><input name="email" type="text" class="popup-inputbox" id="email"></dd>
+                    <dt>User Name</dt>
+                    <dd><input name="useralias" type="text" class="popup-inputbox" id="useralias"></dd>
                 <div class="clear"></div>
                 </dl>
                 <dl>
@@ -323,10 +323,11 @@
                 </dl>                
                 <dl>
                     <dt>&nbsp;</dt>
-                    <dd><input name="create" type="submit" value="Submit" class="btn" id="create_button"></dd>
+                    <dd><input name="edit" type="submit" value="Save" class="btn" id="edit_button"></dd>
                 <div class="clear"></div>
                 </dl>
             </div>
+            <input type="hidden" name="id" value="">
 	</div><!--customeraccountpopup ends-->
 </div>
 

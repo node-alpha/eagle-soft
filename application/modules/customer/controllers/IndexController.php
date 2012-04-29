@@ -161,5 +161,29 @@ class Customer_IndexController extends Core_Controller_Action
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 	}
+	
+	public function editAction()
+	{	
+		$o_MessageHandler = $this->b_fValidate();
+		if($o_MessageHandler->b_fHasError())
+		{
+			echo $o_MessageHandler;
+			$this->_helper->viewRenderer->setNoRender();
+			$this->_helper->layout->disableLayout();
+			return;
+		}
+		$o_CustomerModel = new Model_Customer();
+		$a_Params = $this->_request->getParams();
+		$i_Id = $this->_request->getParam('id');
+		$o_CustomerModel->i_fUpdateCard($a_Params, $i_Id);
+		if (! $o_MessageHandler->b_fIsError())
+		{
+			$o_MessageHandler->v_fSetSuccess();
+			$o_MessageHandler->v_fSetMessage('Edit Customer successful !');
+		}
+		echo $o_MessageHandler;
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+	}
 }
 ?>

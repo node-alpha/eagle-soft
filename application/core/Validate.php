@@ -27,8 +27,15 @@ class Core_Validate
 		$sz_ValidateFile = $sz_ModuleDir . DIRECTORY_SEPARATOR . 'validate/' . ucfirst($sz_Controller) . '.ini';
 		if(is_file($sz_ValidateFile))
 		{
+			try{
 			$o_ValidateObject = new Zend_Config_Ini($sz_ValidateFile, $sz_Action);
-			$a_ValidateItems = $o_ValidateObject->toArray();
+			}catch(Exception $e)
+			{
+			}
+			if($o_ValidateObject)
+			{
+				$a_ValidateItems = $o_ValidateObject->toArray();
+			}
 		}
 		return $a_ValidateItems;
 	}

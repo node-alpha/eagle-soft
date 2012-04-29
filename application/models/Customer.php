@@ -3,8 +3,8 @@ class Model_Customer extends Model_Base
 {
 
 	/*
-     * Search Customer
-     */
+	 * Search Customer
+	 */
 	public function a_fSearchCard ($the_a_Data)
 	{
 		$o_CustomerTable = new Model_Table_Customer();
@@ -156,7 +156,7 @@ class Model_Customer extends Model_Base
 			}
 		}
 	}
-	
+
 	/**
 	 * Get customer by id
 	 * Enter description here ...
@@ -166,5 +166,35 @@ class Model_Customer extends Model_Base
 	{
 		$o_Customer = new Model_Table_Customer();
 		return $o_Customer->a_fGetCustomer($the_i_Id);
+	}
+
+	public function i_fUpdateCard ($the_a_Data, $the_i_Id)
+	{
+		$a_Data = array(
+			'username' => $the_a_Data['username'] , 
+			'useralias' => $the_a_Data['useralias'] , 
+			'uipass' => $the_a_Data['uipass'] , 
+			'credit' => $the_a_Data['credit'] , 
+			'tariff' => $the_a_Data['tariff'] , 
+			'status' => $the_a_Data['status'] , 
+			'lastname' => $the_a_Data['lastname'] , 
+			'firstname' => $the_a_Data['firstname'] , 
+			'address' => $the_a_Data['address'] , 
+			'city' => $the_a_Data['city'] , 
+			'state' => $the_a_Data['state'] , 
+			'country' => $the_a_Data['country'] , 
+			'phone' => $the_a_Data['phone'][0] , 
+			'email' => $the_a_Data['email'] , 
+			'simultaccess' => $the_a_Data['simultaccess'] , 
+			'lastuse' => 'NOW()' , 
+			'creditlimit' => $the_a_Data['creditlimit'] , 
+			'invoiceday' => $the_a_Data['invoiceday'] , 
+			'autorefill' => $the_a_Data['autorefill'] , 
+			// 'email_notification' => $the_a_Data['email_notification'] , 
+			'notify_email' => $the_a_Data['notify_email'] , 
+			'credit_notification' => $the_a_Data['credit_notification'] , 
+		);
+		$o_CustomerTable = new Model_Table_Customer();
+		return $o_CustomerTable->i_fUpdate($a_Data, 'id='.  $the_i_Id);
 	}
 }

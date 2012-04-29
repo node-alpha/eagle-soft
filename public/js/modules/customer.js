@@ -3,9 +3,13 @@ CUSTOMER_ACCOUNT = {
 	searchCustomerPath : sz_PublicHost + 'customer/index/search',
 	loadStatePath : sz_PublicHost + 'customer/index/load-state',
 	getCustomerUrl : sz_PublicHost + 'customer/index/get-customer',
+	editCustomerUrl : sz_PublicHost + 'customer/index/edit',
 	init : function(){
 		$('#create_button').click(function(){
 			CUSTOMER_ACCOUNT.createCustomer();
+		});
+		$('#edit_button').click(function(){
+			CUSTOMER_ACCOUNT.saveCustomer();
 		});
 		$('#search-form').click(function(e){
 			e.preventDefault();
@@ -27,7 +31,6 @@ CUSTOMER_ACCOUNT = {
 			CUSTOMER_ACCOUNT.createCustomerPath,
 			$dataRequest,
 			function(response){
-				console.log(response);
 				if (response.sz_Message)	
 				{
 					alert(response.sz_Message);
@@ -85,11 +88,8 @@ CUSTOMER_ACCOUNT = {
 						'margin-left' : -popMargLeft 
 						});
 						$('#' + popID + ' input[type=text],input[type=password],select').val('');
-						$('#' + popID + ' :radio,:checkbox').removeAttr('checked');
-						$('#' + popID + ' input[type=text]').each(function(){							
-							$(this).val(response[$(this).attr('name')]);
-						});
-						$('#' + popID + ' input[type=text],input[type=password]').each(function(){							
+						$('#' + popID + ' :radio,:checkbox').removeAttr('checked');						
+						$('#' + popID + ' input[type=text],input[type=password],input[type=hidden]').each(function(){							
 							$(this).val(response[$(this).attr('name')]);
 						});
 						$('#' + popID + ' select').each(function(){							
@@ -112,6 +112,25 @@ CUSTOMER_ACCOUNT = {
 					}
 				});
 		return false;
+	},
+	saveCustomer: function(){
+		var $dataRequest = $('#editaccountpopup').find('input, select').serializeArray(); 
+		ajaxCore.ajaxGetJson(
+			CUSTOMER_ACCOUNT.editCustomerUrl,
+			$dataRequest,
+			function(response){
+				if (response.sz_Message)	
+				{
+					alert(response.sz_Message);
+					$('.btn_close').click();
+				}
+			},
+			function(response){
+				if (response.sz_Message)	
+				{
+					alert(response.sz_Message);
+				}
+			});
 	}
 }
 $(function(){CUSTOMER_ACCOUNT.init();})
