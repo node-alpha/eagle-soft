@@ -77,4 +77,15 @@ class Model_Table_Customer extends Model_Table_Base
 	{
 		return $this->update($the_a_Data, $the_sz_Where);
 	}
+	
+	/**
+	 * Get customer by id
+	 * Enter description here ...
+	 * @param unknown_type $the_i_Id
+	 */
+	public function a_fGetCustomer($the_i_Id)
+	{
+		$o_Select = $this->_db->select()->from($this->_name)->where($this->_primary . '=?', $the_i_Id);
+		return $this->_db->fetchRow($o_Select);
+	}
 }

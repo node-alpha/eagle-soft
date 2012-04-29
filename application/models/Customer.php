@@ -156,4 +156,15 @@ class Model_Customer extends Model_Base
 			}
 		}
 	}
+	
+	/**
+	 * Get customer by id
+	 * Enter description here ...
+	 * @param unknown_type $the_i_Id
+	 */
+	public function a_fGetCustomer($the_i_Id)
+	{
+		$o_Customer = new Model_Table_Customer();
+		return $o_Customer->a_fGetCustomer($the_i_Id);
+	}
 }

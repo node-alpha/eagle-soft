@@ -266,7 +266,7 @@ h3{
 .cacccountinner{
 	 height:470px; 
 	 *height:480px; 
-	 overflow-y:scroll; 
+	 overflow-y:auto; 
 	 overflow-x:hidden;
 }
 .finput{

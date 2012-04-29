@@ -13,6 +13,42 @@ class Customer_IndexController extends Core_Controller_Action
 		$this->view->headScript()->appendFile($this->sz_fGetPublicHost() . 'js/jquery.multiFieldExtender-2.0.js', 'text/javascript');
 		$this->view->headTitle('Customer Account');
 		$this->view->assign('a_Countries', $o_CountryModel->a_fGetListCountry());
+		$this->view->assign('a_Invoiceday', range(1, 31));
+		$o_TariffGroupModel = new Model_TariffGroup();
+		$o_TariffGroup = $o_TariffGroupModel->a_fGetTariffGroup();
+		foreach($o_TariffGroup as $tariff)
+		{			
+			$a_TariffGroup[$tariff->id] = $tariff->tariffgroupname;	
+		}
+		
+		$a_Status = array(
+			0 => 'CANCELED',
+			1 => 'ACTIVE',
+			2 => 'NEW',
+			3 => 'WAITING-MAILCONFIRMATION',
+			4 => 'RESERVED',
+			5 => 'EXPIRED',
+			6 => 'SUSPENDED FOR UNDERPAYMENT',
+			7 => 'SUSPENDED FOR LITIGATION',
+			8 => 'WAITING SUBSCRIPTION PAYMENT'
+		);
+		$this->view->assign('a_Status', $a_Status);
+		$a_Access = array(
+			0 => 'INDIVIDUAL ACCESS',
+			1 => 'SIMULTANEOUS ACCESS'
+		);
+		$this->view->assign('a_SimulAccess', $a_Access);
+		$a_LimitNotification = array(
+			-1 => 'NOT DEFINED',
+			10 => 10,
+			20 => 20,
+			50 => 50,
+			100 => 100,
+			500 => 500,
+			1000 => 1000,
+		);
+		$this->view->assign('a_LimitNotification', $a_LimitNotification);
+		$this->view->assign('tariffgroup', $a_TariffGroup);
 	}
 
 	public function createAction ()
@@ -105,6 +141,24 @@ class Customer_IndexController extends Core_Controller_Action
 			$a_State = $o_CountryModel->a_fGetListState();
 		}
 		$this->view->assign('a_State', $a_State);
+		$this->_helper->layout->disableLayout();
+	}
+	
+	/**
+	 * Get customer to edit
+	 * Enter description here ...
+	 */
+	public function getCustomerAction()
+	{		
+		$i_CustId = $this->_request->getParam('id');
+		$o_CustomerModel = new Model_Customer();
+		$a_Customer = $o_CustomerModel->a_fGetCustomer($i_CustId);
+		if($a_Customer)
+		{
+			$a_Customer->i_Code = 1;
+		}
+		$this->getResponse()->setBody(Zend_Json::encode($a_Customer));
+		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 	}
 }
