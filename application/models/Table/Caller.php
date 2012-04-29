@@ -24,4 +24,15 @@ class Model_Table_Caller extends Model_Table_Base
 	{
 		return $this->insert($the_a_Data);
 	}
+	
+	/**
+	 * Get caller of card
+	 * Enter description here ...
+	 * @param unknown_type $the_i_cardId
+	 */
+	public function a_fGetCaller($the_i_cardId = 0)
+	{
+		$o_Select = $this->_db->select()->from($this->_name, array('cid'))->where('id_cc_card = ?', $the_i_cardId);
+		return $this->_db->fetchCol($o_Select);
+	}
 }

@@ -72,13 +72,14 @@ CUSTOMER_ACCOUNT = {
 	},
 	editCustomer : function(the_i_Id)
 	{
-		ajaxCore.ajaxGetJson(
+		ajaxCore.ajaxGetHtml(
 				CUSTOMER_ACCOUNT.getCustomerUrl,
 				{'id': the_i_Id},
 				function(response){
 					if (response)	
 					{
 						popID = 'editaccountpopup';
+						$('#' + popID + ' .cacccountinner').html(response);
 						$('#' + popID).fadeIn().css({ 'width': Number( 510 ) }).prepend('<a href="#" class="close"><img src="'+ sz_PublicHost +'images/dialog_close.png" class="btn_close" title="Close" alt="Close" /></a>');
 						var popMargTop = ($('#' + popID).height() + 10) / 2; 
 						var popMargLeft = ($('#' + popID).width() + 80) / 2; 
@@ -86,20 +87,6 @@ CUSTOMER_ACCOUNT = {
 						$('#' + popID).css({ 
 						'margin-top' : -popMargTop,
 						'margin-left' : -popMargLeft 
-						});
-						$('#' + popID + ' input[type=text],input[type=password],select').val('');
-						$('#' + popID + ' :radio,:checkbox').removeAttr('checked');						
-						$('#' + popID + ' input[type=text],input[type=password],input[type=hidden]').each(function(){							
-							$(this).val(response[$(this).attr('name')]);
-						});
-						$('#' + popID + ' select').each(function(){							
-							$(this).find('option[value="' + response[$(this).attr('name')] +'"]').attr('selected','selected');
-						});
-						$('#' + popID + ' :radio,:checkbox').each(function(){
-							if($(this).val() == response[$(this).attr('name')])
-							{
-								$(this).attr("checked","checked");
-							}
 						});
 						$('body').append('<div id="fade"></div>');
 						$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
