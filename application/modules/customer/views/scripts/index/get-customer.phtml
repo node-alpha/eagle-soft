@@ -1,0 +1,172 @@
+        		<dl>
+                    <dt>Account number</dt>
+                    <dd><input name="username" type="text" class="popup-inputbox" id="username" value="<?php echo $this->a_Customer->username;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="useralias" type="text" class="popup-inputbox" id="useralias" value="<?php echo $this->a_Customer->useralias;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Password</dt>
+                    <dd><input name="uipass" type="text" class="popup-inputbox" id="uipass" value="<?php echo $this->a_Customer->uipass;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Call Plan</dt>
+                    <dd>
+                    	<?php echo $this->formSelect('tariff', '', 'class="popup-selectbox"', $this->tariffgroup)?>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Add Fund($)</dt>
+                    <dd><input name="credit" type="text" class="popup-inputbox" id="credit" value="<?php echo $this->a_Customer->credit;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>First Name</dt>
+                    <dd><input name="firstname" type="text" class="popup-inputbox" id="firstname" value="<?php echo $this->a_Customer->firstname;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Last Name</dt>
+                    <dd><input name="lastname" type="text" class="popup-inputbox" id="lastname" value="<?php echo $this->a_Customer->lastname;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Address</dt>
+                    <dd><input name="address" type="text" class="popup-inputbox" id="address" value="<?php echo $this->a_Customer->address;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>City</dt>
+                    <dd><input name="city" type="text" class="popup-inputbox" id="city" value="<?php echo $this->a_Customer->city;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>State</dt>
+                    <dd><input name="state" type="text" class="popup-inputbox" id="state" value="<?php echo $this->a_Customer->state;?>"></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Country</dt>
+                    <dd>
+                    	<?php echo $this->formSelect('country', '', 'class="popup-selectbox"', $this->a_Countries)?>
+                        <br><span class="font11">Select country to Add Direct Dial</span>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl id="load-state">
+                    
+                </dl>
+                
+                <dl>
+                    <dt>Add Caller ID #1</dt>
+                    <dd>
+                    <?php if($this->a_Callers){?>
+                    <?php foreach((array)$this->a_Callers as $i => $sz_Phone){?>
+                    <div class="itemDetails">
+                    <input name="phone[<?php echo $i?>]" orginName="phone" type="text" class="popup-inputbox" id="phone<?php echo $i?>" value="<?php echo $sz_Phone;?>">
+                    </div>
+                    <?php }?>
+                    <?php 
+                    }else {?>
+                    	<div class="itemDetails">
+	                    <input name="phone[0]" orginName="phone" type="text" class="popup-inputbox" id="phone0" value="">
+	                    </div>
+                    <?php }?>
+                    <div><span class="font11">Like: Country code + Number</span></div></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><h3>Add Speed Dial List</h3></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>To Dial</dt>
+                    <dd>
+                        <table width="100%" cellpadding="0" cellspacing="0" class="popuptable">
+                        <tr>
+                            <td width="75%" valign="top">
+                            <?php if($this->a_Dials){?>
+                            <?php foreach((array)$this->a_Dials as $i=>$o_Dial){?>
+                            <div class="itemDetails">
+                                <div class="clear"></div>
+                                <div class="finput"><input id="spd_dial" name="spd_dial[<?php echo $i?>]" orginName="spd_dial" type="text" class="popup-inputbox1 clonedInput"  value="<?php echo $o_Dial->name;?>" onblur="this.value=this.value==''?'Name':this.value;" onfocus="this.value=this.value=='Name'?'':this.value;"></div>
+                                <div  class="sinput"><input name="dest[<?php echo $i?>]" orginName="dest" type="text" class="popup-inputbox2" id="dest"  value="<?php echo $o_Dial->phone;?>" onblur="this.value=this.value==''?'Destination':this.value;" onfocus="this.value=this.value=='Destination'?'':this.value;"></div>
+                            </div>
+                            <div class="clear"></div>
+                            <?php }
+                            }else{?>
+	                            <div class="itemDetails">
+	                                <div class="clear"></div>
+	                                <div class="finput"><input id="spd_dial" name="spd_dial[0]" orginName="spd_dial" type="text" class="popup-inputbox1 clonedInput"  value="Name" onblur="this.value=this.value==''?'Name':this.value;" onfocus="this.value=this.value=='Name'?'':this.value;"></div>
+	                                <div  class="sinput"><input name="dest[0]" orginName="dest" type="text" class="popup-inputbox2" id="dest"  value="Destination" onblur="this.value=this.value==''?'Destination':this.value;" onfocus="this.value=this.value=='Destination'?'':this.value;"></div>
+	                            </div>
+	                            <div class="clear"></div>	
+                            <?php }?>
+                            
+                            <span class="font11">Like: Country code + Number</span>
+                            </td>
+                        </tr>
+                        </table>
+                    </dd>
+                <div class="clear"></div>
+                </dl>                
+                <dl>
+                    <dt>Account Status</dt>
+                    <dd>
+                    	<?php echo $this->formSelect('status', $this->a_Customer->status, 'class="popup-selectbox"', $this->a_Status)?>                    	
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Multiple Access</dt>
+                    <dd><?php echo $this->formSelect('simultaccess', $this->a_Customer->simulaccess, 'class="popup-selectbox"', $this->a_SimulAccess)?></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Credit Limit Notification</dt>
+                    <dd><?php echo $this->formSelect('creditlimit', $this->a_Customer->creditlimit, 'class="popup-selectbox"', $this->a_LimitNotification)?></dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Allow Email Notification</dt>
+                    <dd>
+                    	<input name="notify_email" type="radio" value="1" id="notify_email_1"<?php if($this->a_Customer->notify_email > 0):?> checked="checked"<?php endif;?>> <label for="notify_email_1">Yes</label>
+	                    <input name="notify_email" type="radio" value="0" id="notify_email_0"<?php if($this->a_Customer->notify_email == 0):?> checked="checked"<?php endif;?>> <label for="notify_email_0">No</label>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Active Session</dt>
+                    <dd>
+                    	<input name="autorefill" type="radio" value="1" id="autorefill_1"<?php if($this->a_Customer->autorefill > 0):?> checked="checked"<?php endif;?>> <label for="autorefill_1">Yes</label>
+	                    <input name="autorefill" type="radio" value="0" id="autorefill_0"<?php if($this->a_Customer->autorefill == 0):?> checked="checked"<?php endif;?>> <label for="autorefill_0">No</label>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Auto Recharge</dt>
+                    <dd>
+	                    <input name="autorecharge" type="radio" value="Y" id="autorecharge_1"<?php if($this->a_Customer->autorecharge == 'Y'):?> checked="checked"<?php endif;?>> <label for="autorecharge_1">Yes</label>
+	                    <input name="autorecharge" type="radio" value="N" id="autorecharge_0"<?php if($this->a_Customer->autorecharge == 'N'):?> checked="checked"<?php endif;?>> <label for="autorecharge_0">No</label>
+                    </dd>
+                <div class="clear"></div>
+                </dl>
+                <dl>
+                    <dt>Statement Date</dt>
+                    <dd>
+                    <?php echo $this->formSelect('invoiceday', $this->a_Customer->invoiceday, 'class="popup-selectbox"', $this->a_Invoiceday)?>
+                    </dd>
+                <div class="clear"></div>
+                </dl>                
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><input name="edit" type="submit" value="Save" class="btn" id="edit_button"></dd>
+                <div class="clear"></div>
+                </dl>
+            	<input type="hidden" name="id" value=" value="<?php echo $this->a_Customer->id;?>"">

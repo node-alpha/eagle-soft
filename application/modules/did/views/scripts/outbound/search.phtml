@@ -1,0 +1,8 @@
+<?php foreach ((array)$this->a_ListItems as $o_Item){?>
+<tr>
+	<td><?php echo $o_Item->cid;?></td>
+	<td><?php echo $o_Item->group_name;?></td>
+	<td><?php if($o_Item->activated) echo 'Yes'; else echo 'No'?></td>
+	<td><input name="" type="image" src="/images/edit.png"  onclick="OUTBOUND.edit(<?php echo $o_Item->id?>)" alt="Edit">&nbsp;&nbsp;&nbsp;<input name="delete" type="image" src="/images/delete1.png"  alt="Delete" onclick="OUTBOUND.delete(<?php echo $o_Item->id?>)"></td>
+</tr>
+<?php }?>

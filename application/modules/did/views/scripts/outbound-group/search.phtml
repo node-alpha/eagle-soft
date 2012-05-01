@@ -1,0 +1,8 @@
+<?php foreach ((array)$this->a_ListItems as $o_Item){?>
+<tr>
+	<td><?php echo $o_Item->id;?></td>
+	<td><?php echo $o_Item->group_name;?></td>
+	<td><?php echo $o_Item->creationdate;?></td>
+	<td><input name="" type="image" src="/images/edit.png"  onclick="OUTBOUND_GROUP.edit(<?php echo $o_Item->id?>)" alt="Edit">&nbsp;&nbsp;&nbsp;<input name="delete" type="image" src="/images/delete1.png"  alt="Delete" onclick="OUTBOUND_GROUP.delete(<?php echo $o_Item->id?>)"></td>
+</tr>
+<?php }?>

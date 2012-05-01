@@ -1,0 +1,19 @@
+                    <table border="0" cellspacing="0" cellpadding="8" id="form-edit">
+                    
+                      <tr>
+                        <td>CID Group Name</td>
+                        <td><input type="hidden" name="id" value="<?php echo $this->o_Item->id;?>"><input name="textfield" type="text" class="txt1" id="textfield" value="<?php echo $this->escape($this->o_Item->group_name);?>"></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td><table width="96%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left"><input name="textfield5" type="button" value="Save" class="btn" id="save" onclick="OUTBOUND_GROUP.save()"></td>
+                            <td align="right"><input name="textfield5" type="button" value="Cancel" class="btn" id="close-popup"></td>
+                          </tr>
+                        </table>
+                        </td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    
