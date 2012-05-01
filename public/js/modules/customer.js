@@ -143,7 +143,7 @@ $(document).ready(function() {
 		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) 
 		return false; 
 	}); 
-		$('a.close, #fade').live('click', function() { 
+	$('a.close, #fade').live('click', function() { 
 		$('#fade , .popup_block').fadeOut(function() { 
 		$('#fade, a.close').remove(); //fade them both out 
 		}); 

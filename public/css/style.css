@@ -336,3 +336,52 @@ h3{
 .load-waiting {
     display: block;
 }
+
+.txtbox1, .txtbox2 {
+	background: url(../images/inputboxbg.gif) repeat-x 0 bottom;
+	width:750px;
+	height:100px;
+	border: 1px solid #DCDCDC;
+	resize:none;
+}
+.txtbox2,.selectbox1 {
+	width:250px;
+}
+
+.btn, .btn1, .btn2 {
+	background:url(../images/btn.gif) repeat-x;
+	padding:5px 12px 7px 12px;
+	padding:8px 4px\9;
+ 	*padding:8px 4px;
+	text-align:center;
+	height:29px;
+	float:left;
+	color:#fff;
+	font:bold 14px Arial, Helvetica, sans-serif;
+	margin:0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	position:relative;
+	behavior:url(scripts/pie.htc);
+	border:none;
+	cursor:pointer;
+	width:85px;
+	display:block;
+ *background-color:#000;
+}
+.filterbox {
+	border:1px solid #ccc;
+	border-bottom:0;
+	padding:5px 0;
+	margin:0;
+	background-color:#eee;
+}
+.txt1, .txt2 {
+	background: url(../images/inputboxbg.gif) repeat-x scroll 0 0 transparent;
+	border: 1px solid #DCDCDC;
+	font-size: 12px;
+	height:20px;
+	padding: 0;
+	width: 250px;
+}

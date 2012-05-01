@@ -19,7 +19,10 @@
 	</script>
 <script type="text/javascript">
         $(document).ready(function() {
-                   $(".itemDetails").EnableMultiField();
+            try{
+            $(".itemDetails").EnableMultiField();
+            }catch(e)
+            {}
         });
 </script>
   <!--script for add more input ends-->
@@ -52,7 +55,7 @@
                 <td align="left" valign="top" class="sidebar">
 					<?php echo $this->layout()->render('leftmenu');?>
                 </td>
-                <td valign="top" align="left" >
+                <td valign="top" align="left"  id="content" class="key">
                 <?php echo $this->layout()->content; ?>
                 </td>
               </tr>
